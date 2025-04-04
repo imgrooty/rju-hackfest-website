@@ -1,12 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect } from 'react';
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Schedule from "@/components/Schedule";
+import Prizes from "@/components/Prizes";
+import Team from "@/components/Team";
+import RegisterForm from "@/components/RegisterForm";
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  useEffect(() => {
+    // Update document title
+    document.title = "RJU HACKFEST 1.0";
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-hackathon-dark">
+      <Navbar />
+      <Hero />
+      <About />
+      <Schedule />
+      <Prizes />
+      <Team />
+      <RegisterForm />
+      <FAQ />
+      <Footer />
     </div>
   );
 };
