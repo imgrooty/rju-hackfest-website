@@ -38,20 +38,43 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
@@ -79,4 +102,53 @@
 
 .card-hover:hover {
   transform: translateY(-5px);
+}
+
+/* 3D effect classes */
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.glass-morphism {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
+}
+
+.neo-blur {
+  @apply backdrop-blur-2xl bg-black/40 border border-white/10;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-br from-hackathon-primary via-hackathon-primary/90 to-hackathon-light bg-clip-text text-transparent;
+}
+
+.blob {
+  @apply absolute animate-morph blur-2xl opacity-50;
+}
+
+.rotate-3d {
+  transition: transform 0.5s;
+}
+
+.rotate-3d:hover {
+  transform: rotate3d(1, 1, 1, 15deg);
+}
+
+.tilt-card {
+  transition: transform 0.5s ease;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(10deg) rotateY(10deg) scale3d(1.05, 1.05, 1.05);
+}
+
+.parallax-slow {
+  transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.parallax-slow:hover {
+  transform: translateZ(20px);
 }

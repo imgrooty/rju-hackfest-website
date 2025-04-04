@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, Users, Award } from "lucide-react";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +27,7 @@ const Navbar: React.FC = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-hackathon-dark/90 backdrop-blur-md py-2 shadow-lg"
+          ? "bg-background/80 backdrop-blur-md py-2 shadow-lg"
           : "bg-transparent py-4"
       }`}
     >
@@ -35,7 +36,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center">
             <a 
               href="#" 
-              className="font-bold text-2xl text-white flex items-center"
+              className="font-bold text-2xl text-foreground flex items-center"
             >
               <span className="text-hackathon-primary">RJU</span>
               <span className="mx-1">HACK</span>
@@ -48,34 +49,35 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center space-x-6">
             <a 
               href="#about" 
-              className="text-white hover:text-hackathon-primary transition-colors"
+              className="text-foreground hover:text-hackathon-primary transition-colors"
             >
               About
             </a>
             <a 
               href="#schedule" 
-              className="text-white hover:text-hackathon-primary transition-colors"
+              className="text-foreground hover:text-hackathon-primary transition-colors"
             >
               Schedule
             </a>
             <a 
               href="#prizes" 
-              className="text-white hover:text-hackathon-primary transition-colors"
+              className="text-foreground hover:text-hackathon-primary transition-colors"
             >
               Prizes
             </a>
             <a 
               href="#team" 
-              className="text-white hover:text-hackathon-primary transition-colors"
+              className="text-foreground hover:text-hackathon-primary transition-colors"
             >
               Team
             </a>
             <a 
               href="#faq" 
-              className="text-white hover:text-hackathon-primary transition-colors"
+              className="text-foreground hover:text-hackathon-primary transition-colors"
             >
               FAQ
             </a>
+            <ThemeSwitcher />
             <Button 
               className="ml-4 bg-hackathon-primary hover:bg-hackathon-secondary text-white"
               onClick={() => document.getElementById('register')?.scrollIntoView({behavior: 'smooth'})}
@@ -85,10 +87,11 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeSwitcher />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white focus:outline-none"
+              className="text-foreground focus:outline-none"
             >
               {isMobileMenuOpen ? (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -109,35 +112,35 @@ const Navbar: React.FC = () => {
             <div className="flex flex-col space-y-4">
               <a 
                 href="#about" 
-                className="text-white hover:text-hackathon-primary transition-colors"
+                className="text-foreground hover:text-hackathon-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </a>
               <a 
                 href="#schedule" 
-                className="text-white hover:text-hackathon-primary transition-colors"
+                className="text-foreground hover:text-hackathon-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Schedule
               </a>
               <a 
                 href="#prizes" 
-                className="text-white hover:text-hackathon-primary transition-colors"
+                className="text-foreground hover:text-hackathon-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Prizes
               </a>
               <a 
                 href="#team" 
-                className="text-white hover:text-hackathon-primary transition-colors"
+                className="text-foreground hover:text-hackathon-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Team
               </a>
               <a 
                 href="#faq" 
-                className="text-white hover:text-hackathon-primary transition-colors"
+                className="text-foreground hover:text-hackathon-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 FAQ
