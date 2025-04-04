@@ -30,11 +30,11 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <div id="team" className="py-20 bg-white">
+    <div id="team" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Our Team</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Meet the dedicated individuals who are making RJU HackFest possible.
           </p>
         </div>
@@ -47,7 +47,7 @@ const Team: React.FC = () => {
                 <h3 className="text-2xl font-bold mb-4">{team.name}</h3>
                 <div className="space-y-4">
                   {team.members.map((member, mIndex) => (
-                    <div key={mIndex} className="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <div key={mIndex} className="flex items-center p-3 bg-muted rounded-lg">
                       <div className="flex-shrink-0 w-10 h-10 bg-hackathon-primary/20 rounded-full flex items-center justify-center mr-3">
                         <span className="text-hackathon-primary font-bold">
                           {member.name.charAt(0)}
@@ -55,7 +55,7 @@ const Team: React.FC = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold">{member.name}</h4>
-                        <p className="text-gray-600 text-sm">{member.role}</p>
+                        <p className="text-muted-foreground text-sm">{member.role}</p>
                       </div>
                     </div>
                   ))}
@@ -67,7 +67,7 @@ const Team: React.FC = () => {
 
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold mb-6">Want to be part of the organizing team?</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
             We're looking for passionate volunteers to help make this event a success.
             If you're interested in being part of our team, get in touch!
           </p>
