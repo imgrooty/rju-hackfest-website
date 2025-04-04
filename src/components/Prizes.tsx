@@ -29,11 +29,11 @@ const Prizes: React.FC = () => {
   ];
 
   return (
-    <div id="prizes" className="py-20 bg-hackathon-dark">
+    <div id="prizes" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Prizes & Rewards</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-foreground mb-4">Prizes & Rewards</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Compete for amazing prizes and recognition for your innovative solutions!
           </p>
         </div>
@@ -49,7 +49,7 @@ const Prizes: React.FC = () => {
                   </div>
                   <h3 className="text-2xl font-bold mb-2">{prize.title}</h3>
                   <div className="text-3xl font-bold text-hackathon-primary mb-4">{prize.amount}</div>
-                  <p className="text-gray-600 flex-grow">{prize.description}</p>
+                  <p className="text-muted-foreground flex-grow">{prize.description}</p>
                   <Award className="mt-6 text-hackathon-primary h-6 w-6" />
                 </CardContent>
               </Card>
@@ -57,8 +57,8 @@ const Prizes: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-16 bg-hackathon-primary/10 rounded-xl p-8 max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold text-white mb-4 text-center">Participant Benefits</h3>
+        <div className="mt-16 bg-secondary/40 dark:bg-secondary/20 rounded-xl p-8 max-w-3xl mx-auto">
+          <h3 className="text-2xl font-bold text-foreground mb-4 text-center">Participant Benefits</h3>
           <ul className="space-y-4">
             <li className="flex items-start">
               <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
@@ -66,7 +66,7 @@ const Prizes: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-gray-300">Free meals and refreshments throughout the event</span>
+              <span className="text-muted-foreground">Free meals and refreshments throughout the event</span>
             </li>
             <li className="flex items-start">
               <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
@@ -74,7 +74,7 @@ const Prizes: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-gray-300">Exclusive hackathon T-shirts and merchandise</span>
+              <span className="text-muted-foreground">Exclusive hackathon T-shirts and merchandise</span>
             </li>
             <li className="flex items-start">
               <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
@@ -82,7 +82,7 @@ const Prizes: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-gray-300">Networking opportunities with industry professionals</span>
+              <span className="text-muted-foreground">Networking opportunities with industry professionals</span>
             </li>
             <li className="flex items-start">
               <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
@@ -90,7 +90,7 @@ const Prizes: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-gray-300">Certificates of participation for all contestants</span>
+              <span className="text-muted-foreground">Certificates of participation for all contestants</span>
             </li>
           </ul>
         </div>

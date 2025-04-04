@@ -31,11 +31,11 @@ const Schedule: React.FC = () => {
   ];
 
   return (
-    <div id="schedule" className="py-20 bg-gray-50">
+    <div id="schedule" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-on-scroll">
           <h2 className="text-4xl font-bold mb-4">Event Schedule</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Our 36-hour hackathon is packed with coding, mentorship, and fun. Here's what to expect:
           </p>
         </div>
@@ -46,13 +46,13 @@ const Schedule: React.FC = () => {
             <TabsTrigger value="day2">Day 2</TabsTrigger>
           </TabsList>
           
-          <TabsContent value="day1" className="bg-white p-6 rounded-lg shadow-md">
+          <TabsContent value="day1" className="bg-card p-6 rounded-lg shadow-md">
             <h3 className="text-2xl font-bold mb-6 text-center">Day 1: Kickoff & Initial Development</h3>
             <div className="space-y-6">
               {day1Schedule.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex flex-col sm:flex-row rounded-lg p-4 hover:bg-gray-50 transition-colors animate-on-scroll"
+                  className="flex flex-col sm:flex-row rounded-lg p-4 hover:bg-muted transition-colors animate-on-scroll"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <div className="sm:w-1/3 mb-2 sm:mb-0">
@@ -63,20 +63,20 @@ const Schedule: React.FC = () => {
                   </div>
                   <div className="sm:w-2/3">
                     <h4 className="text-lg font-semibold">{item.event}</h4>
-                    <p className="text-gray-600">{item.description}</p>
+                    <p className="text-muted-foreground">{item.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </TabsContent>
           
-          <TabsContent value="day2" className="bg-white p-6 rounded-lg shadow-md">
+          <TabsContent value="day2" className="bg-card p-6 rounded-lg shadow-md">
             <h3 className="text-2xl font-bold mb-6 text-center">Day 2: Intensive Development & Presentations</h3>
             <div className="space-y-6">
               {day2Schedule.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex flex-col sm:flex-row rounded-lg p-4 hover:bg-gray-50 transition-colors animate-on-scroll"
+                  className="flex flex-col sm:flex-row rounded-lg p-4 hover:bg-muted transition-colors animate-on-scroll"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <div className="sm:w-1/3 mb-2 sm:mb-0">
@@ -87,7 +87,7 @@ const Schedule: React.FC = () => {
                   </div>
                   <div className="sm:w-2/3">
                     <h4 className="text-lg font-semibold">{item.event}</h4>
-                    <p className="text-gray-600">{item.description}</p>
+                    <p className="text-muted-foreground">{item.description}</p>
                   </div>
                 </div>
               ))}

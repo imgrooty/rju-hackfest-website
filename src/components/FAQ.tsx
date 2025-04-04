@@ -40,11 +40,11 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <div id="faq" className="py-20 bg-gray-50">
+    <div id="faq" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Have questions about RJU HACKFEST? Find answers to common queries below.
           </p>
         </div>
@@ -56,7 +56,7 @@ const FAQ: React.FC = () => {
                 <AccordionTrigger className="text-left text-lg font-medium py-4">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-700 pt-2 pb-4">
+                <AccordionContent className="text-muted-foreground pt-2 pb-4">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -64,7 +64,7 @@ const FAQ: React.FC = () => {
           </Accordion>
         </div>
         
-        <div className="mt-12 p-6 bg-hackathon-dark text-white rounded-lg max-w-3xl mx-auto text-center">
+        <div className="mt-12 p-6 bg-card shadow-md text-card-foreground rounded-lg max-w-3xl mx-auto text-center">
           <h3 className="text-xl font-semibold mb-4">Still have questions?</h3>
           <p className="mb-6">Contact us and we'll get back to you as soon as possible.</p>
           <a 
