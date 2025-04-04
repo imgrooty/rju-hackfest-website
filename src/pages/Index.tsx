@@ -9,11 +9,15 @@ import Team from "@/components/Team";
 import RegisterForm from "@/components/RegisterForm";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import { initScrollAnimations } from "@/utils/scrollAnimations";
 
 const Index = () => {
   useEffect(() => {
     // Update document title
     document.title = "RJU HACKFEST 1.0";
+    
+    // Initialize scroll animations
+    initScrollAnimations();
   }, []);
 
   return (

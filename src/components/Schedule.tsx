@@ -33,14 +33,14 @@ const Schedule: React.FC = () => {
   return (
     <div id="schedule" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-on-scroll">
           <h2 className="text-4xl font-bold mb-4">Event Schedule</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Our 36-hour hackathon is packed with coding, mentorship, and fun. Here's what to expect:
           </p>
         </div>
         
-        <Tabs defaultValue="day1" className="max-w-3xl mx-auto">
+        <Tabs defaultValue="day1" className="max-w-3xl mx-auto animate-on-scroll">
           <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="day1">Day 1</TabsTrigger>
             <TabsTrigger value="day2">Day 2</TabsTrigger>
@@ -52,7 +52,8 @@ const Schedule: React.FC = () => {
               {day1Schedule.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex flex-col sm:flex-row rounded-lg p-4 hover:bg-gray-50 transition-colors"
+                  className="flex flex-col sm:flex-row rounded-lg p-4 hover:bg-gray-50 transition-colors animate-on-scroll"
+                  style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <div className="sm:w-1/3 mb-2 sm:mb-0">
                     <div className="flex items-center text-hackathon-primary">
@@ -75,7 +76,8 @@ const Schedule: React.FC = () => {
               {day2Schedule.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex flex-col sm:flex-row rounded-lg p-4 hover:bg-gray-50 transition-colors"
+                  className="flex flex-col sm:flex-row rounded-lg p-4 hover:bg-gray-50 transition-colors animate-on-scroll"
+                  style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <div className="sm:w-1/3 mb-2 sm:mb-0">
                     <div className="flex items-center text-hackathon-primary">
