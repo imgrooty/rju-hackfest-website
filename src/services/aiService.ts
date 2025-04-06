@@ -20,6 +20,7 @@ interface IdeaResponse {
 const openai = new OpenAI({
   apiKey: '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',
   baseURL: 'https://integrate.api.nvidia.com/v1',
+  dangerouslyAllowBrowser: true, // This flag allows the OpenAI client to run in browser environments
 });
 
 export async function generateProjectIdea(request: IdeaRequest): Promise<IdeaResponse> {
