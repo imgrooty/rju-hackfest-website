@@ -1,5 +1,6 @@
 
 import { toast } from "sonner";
+import OpenAI from 'openai';
 
 interface IdeaRequest {
   theme?: string;
@@ -15,11 +16,15 @@ interface IdeaResponse {
   challenges: string[];
 }
 
-// This is a placeholder API URL - we'd use a more secure approach in production
-const API_URL = "https://api.nemotron.ai/generate";
+// Initialize the OpenAI client with NVIDIA's API endpoint
+const openai = new OpenAI({
+  apiKey: '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',
+  baseURL: 'https://integrate.api.nvidia.com/v1',
+});
 
 export async function generateProjectIdea(request: IdeaRequest): Promise<IdeaResponse> {
   try {
+    // Construct the prompt with the user's input
     const prompt = `Generate a hackathon project idea with the following details:
       ${request.theme ? `Theme: ${request.theme}` : 'Any theme'}
       ${request.technology ? `Technology focus: ${request.technology}` : 'Any technology'}
@@ -34,54 +39,49 @@ export async function generateProjectIdea(request: IdeaRequest): Promise<IdeaRes
         "challenges": ["Challenge 1", "Challenge 2", "Challenge 3"]
       }`;
 
-    // In a real implementation, we would use a backend API to securely make this request
-    // This is just a placeholder to show how it might work
-    console.log("Generating idea with prompt:", prompt);
-    
-    // For demo purposes, we'll simulate a response
-    // In production, this would be a real API call:
-    // const response = await fetch(API_URL, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Authorization': `Bearer ${apiKey}`
-    //   },
-    //   body: JSON.stringify({ prompt })
-    // });
-    // const data = await response.json();
-    
-    // Simulated delay and response for demonstration
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Simulated response
-    const mockResponse: IdeaResponse = {
-      title: `${request.theme || 'Innovative'} ${request.technology || 'Tech'} Solution`,
-      description: `A ${request.difficulty || 'intermediate'} level project that helps users solve real-world problems using ${request.technology || 'modern technology'}.`,
-      outline: [
-        "Define the problem and target users",
-        "Create wireframes and design mockups",
-        "Implement core functionality",
-        "Add user authentication",
-        "Test and refine the solution",
-        "Prepare presentation and demo"
-      ],
-      technologies: [
-        request.technology || "React",
-        "TailwindCSS",
-        "Node.js",
-        "Database solution",
-        "API integration"
-      ],
-      challenges: [
-        "Implementing real-time features",
-        "Ensuring accessibility for all users",
-        "Optimizing for mobile devices",
-        "Handling edge cases gracefully"
-      ]
-    };
-    
-    return mockResponse;
-    
+    console.log("Sending request to Nemotron API with prompt:", prompt);
+
+    // Make the actual API call to NVIDIA Nemotron
+    const completion = await openai.chat.completions.create({
+      model: "nvidia/llama-3.1-nemotron-70b-instruct",
+      messages: [{"role": "user", "content": prompt}],
+      temperature: 0.7,
+      top_p: 1,
+      max_tokens: 1024,
+    });
+
+    const responseText = completion.choices[0]?.message?.content || '';
+    console.log("Received response from API:", responseText);
+
+    // Extract the JSON portion from the response
+    // The model might include additional text around the JSON, so we need to extract just the JSON part
+    let jsonStr = responseText;
+    try {
+      // Find JSON content - look for text between { and the last }
+      const startIndex = responseText.indexOf('{');
+      const endIndex = responseText.lastIndexOf('}');
+      if (startIndex !== -1 && endIndex !== -1) {
+        jsonStr = responseText.substring(startIndex, endIndex + 1);
+      }
+
+      const parsedResponse: IdeaResponse = JSON.parse(jsonStr);
+      return {
+        title: parsedResponse.title || 'Innovative Project Idea',
+        description: parsedResponse.description || 'A project that solves a real-world problem.',
+        outline: Array.isArray(parsedResponse.outline) ? parsedResponse.outline : [
+          "Define project scope", "Create wireframes", "Implement MVP", "Test and refine"
+        ],
+        technologies: Array.isArray(parsedResponse.technologies) ? parsedResponse.technologies : [
+          "JavaScript/TypeScript", "React", "Node.js", "Database solution"
+        ],
+        challenges: Array.isArray(parsedResponse.challenges) ? parsedResponse.challenges : [
+          "Time constraints", "Feature prioritization", "Technical complexity"
+        ]
+      };
+    } catch (parseError) {
+      console.error("Error parsing JSON response:", parseError);
+      throw new Error("Failed to parse AI response. Please try again.");
+    }
   } catch (error) {
     console.error("Error generating project idea:", error);
     toast.error("Failed to generate project idea. Please try again.");

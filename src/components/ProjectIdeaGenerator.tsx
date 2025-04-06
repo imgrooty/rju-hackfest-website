@@ -24,12 +24,18 @@ const ProjectIdeaGenerator: React.FC = () => {
   const [difficulty, setDifficulty] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [result, setResult] = useState<IdeaResult | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    setError(null);
     setIsLoading(true);
+    
     try {
+      toast.info("Generating your project idea...", {
+        duration: 3000,
+      });
+      
       const response = await generateProjectIdea({
         theme,
         technology,
@@ -40,6 +46,7 @@ const ProjectIdeaGenerator: React.FC = () => {
       toast.success("Project idea generated successfully!");
     } catch (error) {
       console.error("Failed to generate idea:", error);
+      setError("Failed to generate project idea. Please try again.");
       toast.error("Failed to generate idea. Please try again.");
     } finally {
       setIsLoading(false);
@@ -52,7 +59,7 @@ const ProjectIdeaGenerator: React.FC = () => {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Lightbulb className="h-5 w-5 text-hackathon-primary" />
-            Generate Project Idea
+            Generate Project Idea with NVIDIA Nemotron
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -109,6 +116,12 @@ const ProjectIdeaGenerator: React.FC = () => {
                 </>
               )}
             </Button>
+            
+            {error && (
+              <div className="p-3 mt-4 bg-destructive/10 border border-destructive text-destructive rounded-md text-sm">
+                {error}
+              </div>
+            )}
           </form>
         </CardContent>
       </Card>
@@ -181,7 +194,7 @@ const ProjectIdeaGenerator: React.FC = () => {
       
       <div className="mt-8 p-4 bg-muted/50 rounded-lg">
         <p className="text-sm text-muted-foreground text-center">
-          This AI assistant generates project ideas based on your inputs. The ideas are meant to inspire your creativity 
+          This AI assistant uses NVIDIA Nemotron 70B to generate project ideas based on your inputs. The ideas are meant to inspire your creativity 
           and serve as starting points for your hackathon project. Feel free to modify and expand upon them!
         </p>
       </div>
