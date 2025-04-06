@@ -1,164 +1,108 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Calendar, Users, Award } from "lucide-react";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
+import ThemeSwitcher from './ThemeSwitcher';
+import { Menu, X } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const Navbar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setScrollPosition(window.scrollY);
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
+  
+  const navLinks = [
+    { name: "About", href: "/#about" },
+    { name: "Schedule", href: "/#schedule" },
+    { name: "Prizes", href: "/#prizes" },
+    { name: "Team", href: "/#team" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "AI Project Ideas", href: "/idea-generator" },
+  ];
+  
+  const isScrolled = scrollPosition > 10;
+  
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md py-2 shadow-lg"
-          : "bg-transparent py-4"
-      }`}
+    <header 
+      className={cn(
+        "fixed top-0 left-0 right-0 transition-all duration-300 z-50",
+        isScrolled ? "bg-background/90 backdrop-blur-md shadow-md" : "bg-transparent"
+      )}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <a 
-              href="#" 
-              className="font-bold text-2xl text-foreground flex items-center"
-            >
-              <span className="text-hackathon-primary">RJU</span>
-              <span className="mx-1">HACK</span>
-              <span className="text-hackathon-primary">FEST</span>
-              <span className="text-xs ml-1 text-hackathon-light">1.0</span>
-            </a>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <a 
-              href="#about" 
-              className="text-foreground hover:text-hackathon-primary transition-colors"
-            >
-              About
-            </a>
-            <a 
-              href="#schedule" 
-              className="text-foreground hover:text-hackathon-primary transition-colors"
-            >
-              Schedule
-            </a>
-            <a 
-              href="#prizes" 
-              className="text-foreground hover:text-hackathon-primary transition-colors"
-            >
-              Prizes
-            </a>
-            <a 
-              href="#team" 
-              className="text-foreground hover:text-hackathon-primary transition-colors"
-            >
-              Team
-            </a>
-            <a 
-              href="#faq" 
-              className="text-foreground hover:text-hackathon-primary transition-colors"
-            >
-              FAQ
-            </a>
-            <ThemeSwitcher />
-            <Button 
-              className="ml-4 bg-hackathon-primary hover:bg-hackathon-secondary text-white"
-              onClick={() => document.getElementById('register')?.scrollIntoView({behavior: 'smooth'})}
-            >
-              Register Now
-            </Button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <ThemeSwitcher />
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-foreground focus:outline-none"
-            >
-              {isMobileMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
+      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="flex items-center">
+          <Link to="/" className="text-2xl font-bold text-foreground">
+            RJU <span className="text-hackathon-primary">HackFest</span>
+          </Link>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col space-y-4">
-              <a 
-                href="#about" 
-                className="text-foreground hover:text-hackathon-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+        
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-1">
+          {navLinks.map((link) => (
+            <Button 
+              key={link.name} 
+              variant="ghost"
+              className="hover:bg-muted"
+              asChild
+            >
+              <Link to={link.href}>{link.name}</Link>
+            </Button>
+          ))}
+          
+          <div className="ml-2">
+            <ThemeSwitcher />
+          </div>
+          
+          <Button asChild className="ml-2 bg-hackathon-primary hover:bg-hackathon-secondary text-white">
+            <Link to="#register">Register Now</Link>
+          </Button>
+        </div>
+        
+        {/* Mobile Navigation Button */}
+        <div className="flex items-center md:hidden space-x-2">
+          <ThemeSwitcher />
+          <Button 
+            variant="ghost" 
+            size="icon"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-foreground"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
+      </nav>
+      
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-background border-t">
+          <div className="container mx-auto px-4 py-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="block py-2 px-4 text-foreground hover:bg-muted rounded-md"
+                onClick={() => setIsMenuOpen(false)}
               >
-                About
-              </a>
-              <a 
-                href="#schedule" 
-                className="text-foreground hover:text-hackathon-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Schedule
-              </a>
-              <a 
-                href="#prizes" 
-                className="text-foreground hover:text-hackathon-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Prizes
-              </a>
-              <a 
-                href="#team" 
-                className="text-foreground hover:text-hackathon-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Team
-              </a>
-              <a 
-                href="#faq" 
-                className="text-foreground hover:text-hackathon-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                FAQ
-              </a>
-              <Button 
-                className="bg-hackathon-primary hover:bg-hackathon-secondary text-white"
-                onClick={() => {
-                  document.getElementById('register')?.scrollIntoView({behavior: 'smooth'});
-                  setIsMobileMenuOpen(false);
-                }}
-              >
-                Register Now
+                {link.name}
+              </Link>
+            ))}
+            <div className="py-2 px-4">
+              <Button asChild className="w-full bg-hackathon-primary hover:bg-hackathon-secondary">
+                <Link to="#register" onClick={() => setIsMenuOpen(false)}>Register Now</Link>
               </Button>
             </div>
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      )}
+    </header>
   );
 };
 
