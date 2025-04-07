@@ -56,40 +56,6 @@ A modern, responsive website for the RJU Hackfest 1.0 hackathon event. Built wit
 - [React Query](https://tanstack.com/query/latest) - Data fetching
 - [GSAP](https://greensock.com/gsap/) - Animations
 
-## 📁 Project Structure
-
-```
-rju-hackfest-website/
-├── public/              # Static assets
-├── src/
-│   ├── components/      # React components
-│   │   ├── ui/          # UI components (shadcn)
-│   │   ├── About.tsx    # About section
-│   │   ├── FAQ.tsx      # FAQ section
-│   │   ├── Footer.tsx   # Footer component
-│   │   ├── Hero.tsx     # Hero section
-│   │   ├── Navbar.tsx   # Navigation bar
-│   │   ├── Prizes.tsx   # Prizes section
-│   │   ├── RegisterForm.tsx # Registration form
-│   │   ├── Schedule.tsx # Schedule section
-│   │   ├── Scene3D.tsx  # 3D scene
-│   │   ├── Team.tsx     # Team section
-│   │   ├── ThemeProvider.tsx # Theme context
-│   │   └── ThemeSwitcher.tsx # Theme toggle
-│   ├── hooks/           # Custom React hooks
-│   ├── lib/             # Utility functions
-│   ├── pages/           # Page components
-│   ├── services/        # API services
-│   ├── utils/           # Helper utilities
-│   ├── App.tsx          # Main app component
-│   ├── index.css        # Global styles
-│   └── main.tsx         # Entry point
-├── index.html           # HTML template
-├── tailwind.config.ts   # Tailwind configuration
-├── tsconfig.json        # TypeScript configuration
-└── vite.config.ts       # Vite configuration
-```
-
 ## 🧩 Key Components
 
 - **Hero**: Eye-catching introduction to the hackathon
@@ -151,7 +117,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👥 Contributors
 
-- [Your Name](https://github.com/yourusername)
+- [Bikram Sharma](https://github.com/imgrooty)
 
 ## 🙏 Acknowledgments
 
