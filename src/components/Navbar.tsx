@@ -25,7 +25,6 @@ const Navbar: React.FC = () => {
     { name: "Prizes", href: "/#prizes" },
     { name: "Team", href: "/#team" },
     { name: "FAQ", href: "/#faq" },
-    { name: "AI Project Ideas", href: "/idea-generator" },
   ];
   
   const isScrolled = scrollPosition > 10;
@@ -40,7 +39,7 @@ const Navbar: React.FC = () => {
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="text-2xl font-bold text-foreground">
-            RJU <span className="text-hackathon-primary">HackFest</span>
+            RJU <span className="text-hackathon-primary">HackFest</span><span className="text-xs ml-1 text-hackathon-light">1.0</span>
           </Link>
         </div>
         
