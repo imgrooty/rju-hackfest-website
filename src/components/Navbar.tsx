@@ -26,6 +26,16 @@ const Navbar: React.FC = () => {
     { name: "Team", href: "/#team" },
     { name: "FAQ", href: "/#faq" },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.split('#')[1];
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
   
   const isScrolled = scrollPosition > 10;
   
@@ -52,7 +62,7 @@ const Navbar: React.FC = () => {
               className="hover:bg-muted"
               asChild
             >
-              <Link to={link.href}>{link.name}</Link>
+              <a href={link.href} onClick={(e) => handleNavClick(e, link.href)}>{link.name}</a>
             </Button>
           ))}
           
@@ -61,7 +71,7 @@ const Navbar: React.FC = () => {
           </div>
           
           <Button asChild className="ml-2 bg-hackathon-primary hover:bg-hackathon-secondary text-white">
-            <Link to="#register">Register Now</Link>
+            <a href="#register" onClick={(e) => handleNavClick(e, "#register")}>Register Now</a>
           </Button>
         </div>
         
@@ -84,18 +94,18 @@ const Navbar: React.FC = () => {
         <div className="md:hidden bg-background border-t">
           <div className="container mx-auto px-4 py-2">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
-                to={link.href}
+                href={link.href}
                 className="block py-2 px-4 text-foreground hover:bg-muted rounded-md"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
             <div className="py-2 px-4">
               <Button asChild className="w-full bg-hackathon-primary hover:bg-hackathon-secondary">
-                <Link to="#register" onClick={() => setIsMenuOpen(false)}>Register Now</Link>
+                <a href="#register" onClick={(e) => handleNavClick(e, "#register")}>Register Now</a>
               </Button>
             </div>
           </div>
