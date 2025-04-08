@@ -71,7 +71,18 @@ const Navbar: React.FC = () => {
           </div>
           
           <Button asChild className="ml-2 bg-hackathon-primary hover:bg-hackathon-secondary text-white">
-            <a href="#register" onClick={(e) => handleNavClick(e, "#register")}>Register Now</a>
+            <a 
+              href="#register" 
+              onClick={(e) => {
+                e.preventDefault();
+                const registerElement = document.getElementById('register');
+                if (registerElement) {
+                  registerElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Register Now
+            </a>
           </Button>
         </div>
         
