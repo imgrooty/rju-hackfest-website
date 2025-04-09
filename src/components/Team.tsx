@@ -7,8 +7,8 @@ const Team: React.FC = () => {
     {
       name: "Organizing Team",
       members: [
+        { name: "Hackathon Director", role: "Core Organizing Committee" },
         { name: "Co-ordinator", role: "Core Organizing Committee" },
-        { name: "Student Lead", role: "Core Organizing Committee" },
         { name: "Venue and Logistics Manager", role: "Core Organizing Committee" },
         { name: "Media and Tech Manager", role: "Core Organizing Committee" },
       ]
@@ -48,7 +48,7 @@ const Team: React.FC = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid m-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {teams.map((team, index) => (
             <Card key={index} className="shadow-md overflow-hidden">
               <div className="h-2 bg-hackathon-primary"></div>
@@ -74,7 +74,7 @@ const Team: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold mb-6">Want to be part of the organizing team?</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
             We're looking for passionate volunteers to help make this event a success.
@@ -86,7 +86,7 @@ const Team: React.FC = () => {
           >
             Join Our Team
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );
