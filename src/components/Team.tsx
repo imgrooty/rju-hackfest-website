@@ -7,19 +7,28 @@ const Team: React.FC = () => {
     {
       name: "Organizing Team",
       members: [
+        { name: "Co-ordinator", role: "Core Organizing Committee" },
         { name: "Student Lead", role: "Core Organizing Committee" },
-        { name: "Industry Advisor", role: "Core Organizing Committee" },
+        { name: "Venue and Logistics Manager", role: "Core Organizing Committee" },
+        { name: "Media and Tech Manager", role: "Core Organizing Committee" },
       ]
     },
-    {
-      name: "Subcommittees",
-      members: [
-        { name: "Venue & Logistics", role: "Venue setup & internet coordination" },
-        { name: "Promotion & Outreach", role: "Social media & branding" },
-        { name: "Judging & Mentorship", role: "Recruiting judges & mentors" },
-        { name: "Participant Management", role: "Registration & communication" },
-      ]
-    },
+    // {
+    //   name: "Organizing Team",
+    //   members: [
+    //     { name: "Student Lead", role: "Core Organizing Committee" },
+    //     { name: "Industry Advisor", role: "Core Organizing Committee" },
+    //   ]
+    // },
+    // {
+    //   name: "Subcommittees",
+    //   members: [
+    //     { name: "Venue & Logistics", role: "Venue setup & internet coordination" },
+    //     { name: "Promotion & Outreach", role: "Social media & branding" },
+    //     { name: "Judging & Mentorship", role: "Recruiting judges & mentors" },
+    //     { name: "Participant Management", role: "Registration & communication" },
+    //   ]
+    // },
     {
       name: "Mentors & Judges",
       members: [

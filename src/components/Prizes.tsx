@@ -60,13 +60,13 @@ const Prizes: React.FC = () => {
         <div className="mt-16 bg-secondary/40 dark:bg-secondary/20 rounded-xl p-8 max-w-3xl mx-auto">
           <h3 className="text-2xl font-bold text-foreground mb-4 text-center">Participant Benefits</h3>
           <ul className="space-y-4">
-            <li className="flex items-start">
+          <li className="flex items-start">
               <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
                 <svg className="h-4 w-4 text-hackathon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-muted-foreground">Free meals and refreshments throughout the event</span>
+              <span className="text-muted-foreground">🌐 Access to Premium Tools & APIs</span>
             </li>
             <li className="flex items-start">
               <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
@@ -74,7 +74,7 @@ const Prizes: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-muted-foreground">Exclusive hackathon T-shirts and merchandise</span>
+              <span className="text-muted-foreground">🧠 Workshops & Tech Talks</span>
             </li>
             <li className="flex items-start">
               <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
@@ -82,7 +82,7 @@ const Prizes: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-muted-foreground">Networking opportunities with industry professionals</span>
+              <span className="text-muted-foreground">📓Exclusive hackathon T-shirts and merchandise</span>
             </li>
             <li className="flex items-start">
               <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
@@ -90,7 +90,31 @@ const Prizes: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-muted-foreground">Certificates of participation for all contestants</span>
+              <span className="text-muted-foreground">🤝Networking opportunities with industry professionals</span>
+            </li>
+            <li className="flex items-start">
+              <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
+                <svg className="h-4 w-4 text-hackathon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-muted-foreground">📜Certificates of participation for all contestants</span>
+            </li>
+            <li className="flex items-start">
+              <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
+                <svg className="h-4 w-4 text-hackathon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-muted-foreground">📸 Professional Event Photography</span>
+            </li>
+            <li className="flex items-start">
+              <div className="flex-shrink-0 h-6 w-6 rounded-full bg-hackathon-primary/30 flex items-center justify-center mr-3 mt-0.5">
+                <svg className="h-4 w-4 text-hackathon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-muted-foreground">💬 Mentorship & Team Support</span>
             </li>
           </ul>
         </div>
