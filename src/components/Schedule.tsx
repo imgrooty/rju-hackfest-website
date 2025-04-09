@@ -31,7 +31,7 @@ const Schedule: React.FC = () => {
   ];
 
   return (
-    <div id="schedule" className="py-20 bg-background">
+    <div id="schedule" className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-on-scroll">
           <h2 className="text-4xl font-bold mb-4">Event Schedule</h2>

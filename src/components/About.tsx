@@ -28,7 +28,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div id="about" className="py-20 bg-background relative">
+    <div id="about" className="py-20 bg-transparent relative">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 fade-in-left perspective">
