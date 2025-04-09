@@ -39,7 +39,7 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <div id="team" className="py-20 bg-background">
+    <div id="team" className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Our Team</h2>

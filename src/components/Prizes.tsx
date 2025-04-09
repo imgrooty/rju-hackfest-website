@@ -29,7 +29,7 @@ const Prizes: React.FC = () => {
   ];
 
   return (
-    <div id="prizes" className="py-20 bg-background">
+    <div id="prizes" className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-foreground mb-4">Prizes & Rewards</h2>
