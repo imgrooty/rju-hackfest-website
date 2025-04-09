@@ -18,7 +18,7 @@ A modern, responsive website for the RJU Hackfest 1.0 hackathon event. Built wit
 ### Prerequisites
 
 - Node.js (v16 or higher)
-- npm or yarn
+- npm 
 
 ### Installation
 
