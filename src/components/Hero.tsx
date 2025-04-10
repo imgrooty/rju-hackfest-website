@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
               RJU <span className="text-gradient animate-pulse-slow">HACK</span>FEST 1.0
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-xl mx-auto md:mx-0">
-              The first-ever hackathon at our university. Join us for 36 hours of coding, innovation, and fun!
+              The first-ever hackathon at Rajarshi Janak University. Join us for 36 hours of coding, innovation, and fun!
             </p>
             <div className="space-x-4">
               <Button className="bg-hackathon-primary hover:bg-hackathon-secondary text-white px-8 py-6 tilt-card"

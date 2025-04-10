@@ -42,7 +42,7 @@ const About: React.FC = () => {
           </div>
           <div className="flex-1 fade-in-right">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              The First <span className="text-gradient">University Hackathon</span> Experience
+              The First <span className="text-gradient">Rajarshi Janak University Hackathon</span> Experience
             </h2>
             <p className="text-lg mb-8">
               RJU HackFest 1.0 is the first-ever hackathon at our university where students from all faculties can collaborate,
