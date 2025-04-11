@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-background border-t border-border py-5">
+    <footer className="bg-background py-5">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-5 pt-4 border-t border-border text-center text-muted-foreground">
+        <div className="mt-5 pt-4 border-border text-center text-muted-foreground">
           <p>© {new Date().getFullYear()} RJU HACKFEST. All rights reserved.</p>
         </div>
       </div>
