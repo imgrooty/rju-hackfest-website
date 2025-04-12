@@ -1,7 +1,7 @@
 import React from 'react';
 import { Calendar, Users, Award, Clock, Code2, Lightbulb, Rocket, Trophy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
+/*hello*/
 const About: React.FC = () => {
   const features = [
     {
