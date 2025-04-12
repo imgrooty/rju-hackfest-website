@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail,ReceiptRussianRuble } from "lucide-react";
 
 const Team: React.FC = () => {
   const [expandedIndex, setExpandedIndex] = useState<string | null>(null);
@@ -19,7 +19,8 @@ const Team: React.FC = () => {
             linkedin: "#",
             github: "#",
             twitter: "#",
-            email: "director@example.com"
+            email: "director@example.com",
+            portfolio: "#"
           }
         },
         {
@@ -29,10 +30,11 @@ const Team: React.FC = () => {
           image: "sanjana.jpg",
           bio: "Coordinating all aspects of the hackathon, from planning to execution.",
           social: {
-            linkedin: "#",
-            github: "#",
+            linkedin: "https://www.linkedin.com/in/i-am-sanjana-yadav/",
+            github: "https://github.com/SanjanaYdv1",
             twitter: "#",
-            email: "coordinator@example.com"
+            email: "ysanjana637@gmail.com",
+            portfolio: "https://sanjana-eight.vercel.app/"
           }
         },
         {
@@ -42,23 +44,25 @@ const Team: React.FC = () => {
           role: "Core Organizing Committee",
           bio: "Managing venue arrangements, equipment, and all logistical aspects of the event.",
           social: {
-            linkedin: "#",
-            github: "#",
+            linkedin: "https://www.linkedin.com/in/sushmita-sah-444051336/",
+            github: "https://github.com/sush610",
             twitter: "#",
-            email: "logistics@example.com"
+            email: "sahsushmita2003@gmail.com",
+            portfolio: "https://sush610.github.io/My-Portfolio/"
           }
         },
         {
           post: "Media and Tech Manager",
           name: "Bikram Sharma",
-          image: "bikram.jpg",
+          image: "bikram.png",
           role: "Core Organizing Committee",
           bio: "Overseeing technical infrastructure, media coverage, and digital presence.",
           social: {
-            linkedin: "#",
-            github: "#",
+            linkedin: "https://www.linkedin.com/in/i-am-bikram-sharma/",
+            github: "https://github.com/imgrooty",
             twitter: "#",
-            email: "media@example.com"
+            email: "happyissad8@gmail.com",
+            portfolio: "https://bikram-portfolio-eight.vercel.app/"
           }
         },
       ]
@@ -67,25 +71,30 @@ const Team: React.FC = () => {
       name: "Mentors & Judges",
       members: [
         {
-          name: "Industry Professionals",
+          post: "Industry Professionals",
+          name: "John Doe",
           role: "Providing guidance to teams",
           bio: "Experienced professionals from leading tech companies providing mentorship and guidance to participants.",
           social: {
             linkedin: "#",
             github: "#",
             twitter: "#",
-            email: "mentors@example.com"
+            email: "mentors@example.com",
+            portfolio: "#"
           }
         },
         {
-          name: "Academic Experts",
+          post: "Academic Experts",
+          name: "Jane Smith",
           role: "Evaluating projects",
           bio: "Distinguished faculty members and academic experts evaluating projects and providing feedback.",
+          more: "view more",
           social: {
             linkedin: "#",
             github: "#",
             twitter: "#",
-            email: "judges@example.com"
+            email: "judges@example.com",
+            portfolio: "#"
           }
         },
       ]
@@ -117,7 +126,7 @@ const Team: React.FC = () => {
                   return (
                     <div
                       key={memberIndex}
-                      className={`transition-all duration-500 ease-in-out ${isExpanded
+                      className={`ml-10 mr-10 transition-all duration-500 ease-in-out ${isExpanded
                           ? 'sm:row-span-2'
                           : expandedIndex !== null && expandedIndex !== totalIndex
                             ? 'opacity-50 scale-95'
@@ -155,6 +164,7 @@ const Team: React.FC = () => {
                                 {member.post}
                               </h4>
                               <p className="text-hackathon-primary font-medium mb-2">{member.name}</p>
+                              <p className="text-muted-foreground mb-2">{member.more}</p>
 
                               {isExpanded && (
                                 <div className="mt-4 space-y-4 animate-fadeIn">
@@ -167,8 +177,8 @@ const Team: React.FC = () => {
                                     <a href={member.social.github} className="text-muted-foreground hover:text-hackathon-primary transition-colors">
                                       <Github className="h-5 w-5" />
                                     </a>
-                                    <a href={member.social.twitter} className="text-muted-foreground hover:text-hackathon-primary transition-colors">
-                                      <Twitter className="h-5 w-5" />
+                                    <a href={member.social.portfolio} className="text-muted-foreground hover:text-hackathon-primary transition-colors">
+                                      <ReceiptRussianRuble className="h-5 w-5" />
                                     </a>
                                     <a href={`mailto:${member.social.email}`} className="text-muted-foreground hover:text-hackathon-primary transition-colors">
                                       <Mail className="h-5 w-5" />
