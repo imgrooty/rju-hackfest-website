@@ -10,9 +10,10 @@ const Team: React.FC = () => {
       name: "Organizing Team",
       members: [
         {
-          name: "Hackathon Director",
+          post: "Hackathon Director",
+          name: "Brikhesh Choudhary",
           role: "Core Organizing Committee",
-          image: "s.png",
+          image: "brikhesh.jpeg",
           bio: "Leading the vision and direction of RJU HackFest 1.0, ensuring a successful event.",
           social: {
             linkedin: "#",
@@ -22,7 +23,8 @@ const Team: React.FC = () => {
           }
         },
         {
-          name: "Hackathon Co-ordinator",
+          post: "Hackathon Co-ordinator",
+          name: "Sanjana Yadav",
           role: "Core Organizing Committee",
           image: "sanjana.jpg",
           bio: "Coordinating all aspects of the hackathon, from planning to execution.",
@@ -34,7 +36,9 @@ const Team: React.FC = () => {
           }
         },
         {
-          name: "Venue and Logistics Manager",
+          post: "Venue and Logistics Manager",
+          name: "Sushmita Sah",
+          image: "sushmita.jpeg",
           role: "Core Organizing Committee",
           bio: "Managing venue arrangements, equipment, and all logistical aspects of the event.",
           social: {
@@ -45,7 +49,9 @@ const Team: React.FC = () => {
           }
         },
         {
-          name: "Media and Tech Manager",
+          post: "Media and Tech Manager",
+          name: "Bikram Sharma",
+          image: "bikram.jpg",
           role: "Core Organizing Committee",
           bio: "Overseeing technical infrastructure, media coverage, and digital presence.",
           social: {
@@ -120,7 +126,7 @@ const Team: React.FC = () => {
                       onMouseEnter={() => setExpandedIndex(totalIndex)}
                       onMouseLeave={() => setExpandedIndex(null)}
                     >
-                      <Card className={`h-full overflow-hidden border-none shadow-lg transition-all duration-500 ${isExpanded ? 'shadow-2xl' : ''
+                      <Card className={`h-full overflow-hidden border-blue shadow-lg transition-all duration-500 ${isExpanded ? 'shadow-2xl' : ''
                         }`}>
                         <div className="h-1 bg-hackathon-primary"></div>
                         <CardContent className="p-6">
@@ -146,9 +152,9 @@ const Team: React.FC = () => {
                             <div className="flex-1">
                               <h4 className={`font-bold transition-all duration-500 ${isExpanded ? 'text-2xl mb-2' : 'text-xl'
                                 }`}>
-                                {member.name}
+                                {member.post}
                               </h4>
-                              <p className="text-hackathon-primary font-medium mb-2">{member.role}</p>
+                              <p className="text-hackathon-primary font-medium mb-2">{member.name}</p>
 
                               {isExpanded && (
                                 <div className="mt-4 space-y-4 animate-fadeIn">
