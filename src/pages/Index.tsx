@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import { initScrollAnimations } from "@/utils/scrollAnimations";
 import Scene3D from "@/components/Scene3D";
 
+
 const Index = () => {
   useEffect(() => {
     // Update document title
