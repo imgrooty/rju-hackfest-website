@@ -152,9 +152,9 @@ const Team: React.FC = () => {
                             <div className="flex-1">
                               <h4 className={`font-bold transition-all duration-500 ${isExpanded ? 'text-2xl mb-2' : 'text-xl'
                                 }`}>
-                                {member.post}
+                                {member.post} //edited
                               </h4>
-                              <p className="text-hackathon-primary font-medium mb-2">{member.name}</p>
+                              <p className="text-hackathon-primary font-medium mb-2">{member.name}</p>  //edited
 
                               {isExpanded && (
                                 <div className="mt-4 space-y-4 animate-fadeIn">
