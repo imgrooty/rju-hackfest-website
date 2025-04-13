@@ -148,9 +148,7 @@ const About: React.FC = () => {
             The First <span className="text-gradient">Rajarshi Janak University Hackathon</span> Experience
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            RJU HackFest 1.0 is the first-ever hackathon at our university where students from all faculties can collaborate,
-            innovate, and turn their ideas into reality. This 36-hour event brings together participants, mentors, and industry professionals.
-          </p>
+          RJU HackFest 1.0 is the first-ever hackathon at our university organized under department of science and technology where students from faculties (BSc CSIT and BCA) can collaborate, innovate, and turn their ideas into reality. This 36-hour event brings together participants, mentors, and industry professionals.  </p>
         </div>
 
         {/* Highlights Section */}
