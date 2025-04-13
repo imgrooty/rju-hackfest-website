@@ -15,6 +15,8 @@ interface TeamMember {
   email: string;
   phone: string;
   gender: string;
+  faculty: string;
+  semester: string;
 }
 
 const RegisterForm: React.FC = () => {
@@ -23,7 +25,7 @@ const RegisterForm: React.FC = () => {
   const [registrationType, setRegistrationType] = useState('individual');
   
   // Initial empty team member
-  const emptyMember: TeamMember = { name: '', email: '', phone: '', gender: '' };
+  const emptyMember: TeamMember = { name: '', email: '', phone: '', gender: '', faculty: '', semester: '' };
   
   const [formData, setFormData] = useState({
     registrationType: 'individual',
@@ -46,6 +48,16 @@ const RegisterForm: React.FC = () => {
     frameworks: ['React', 'Angular', 'Vue.js', 'Next.js', 'Django', 'Flask', 'Spring', 'Express.js', 'Other'],
     databases: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase', 'Redis', 'Other']
   };
+
+  // Faculty options
+  const facultyOptions = [
+    'BSc CSIT',
+    'BCA'
+    
+  ];
+
+  // Semester options
+  const semesterOptions = ['1', '2', '3', '4', '5', '6', '7', '8'];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -109,7 +121,7 @@ const RegisterForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwPvISOnYumJcb3d-NzC-n647jv3doLu40ORQdWYsHPgn6Ifdto9I6ldQe-VlXd1Dud/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnXeg6vqddeOTSKZR0wyHYMmhP9m9fyxmisg9nYEq8mFx9CS9-RnLePAkLhSyiKxMnzQ/exec';
 
     try {
       const dataToSend = {
@@ -275,6 +287,42 @@ const RegisterForm: React.FC = () => {
                       </SelectContent>
                     </Select>
                   </div>
+                  <div>
+                    <Label htmlFor="leaderFaculty" className="text-foreground">Faculty</Label>
+                    <Select
+                      value={formData.teamLeader.faculty}
+                      onValueChange={(value) => handleTeamLeaderChange('faculty', value)}
+                    >
+                      <SelectTrigger className="bg-background border-input">
+                        <SelectValue placeholder="Select faculty" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {facultyOptions.map((faculty) => (
+                          <SelectItem key={faculty} value={faculty.toLowerCase().replace(/\s+/g, '-')}>
+                            {faculty}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <Label htmlFor="leaderSemester" className="text-foreground">Semester</Label>
+                    <Select
+                      value={formData.teamLeader.semester}
+                      onValueChange={(value) => handleTeamLeaderChange('semester', value)}
+                    >
+                      <SelectTrigger className="bg-background border-input">
+                        <SelectValue placeholder="Select semester" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {semesterOptions.map((semester) => (
+                          <SelectItem key={semester} value={semester}>
+                            Semester {semester}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
               </div>
 
@@ -356,6 +404,42 @@ const RegisterForm: React.FC = () => {
                               <SelectItem value="male">Male</SelectItem>
                               <SelectItem value="female">Female</SelectItem>
                               <SelectItem value="other">Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                        <div>
+                          <Label className="text-foreground">Faculty</Label>
+                          <Select
+                            value={member.faculty}
+                            onValueChange={(value) => handleTeamMemberChange(index, 'faculty', value)}
+                          >
+                            <SelectTrigger className="bg-background border-input">
+                              <SelectValue placeholder="Select faculty" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {facultyOptions.map((faculty) => (
+                                <SelectItem key={`${index}-${faculty}`} value={faculty.toLowerCase().replace(/\s+/g, '-')}>
+                                  {faculty}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        </div>
+                        <div>
+                          <Label className="text-foreground">Semester</Label>
+                          <Select
+                            value={member.semester}
+                            onValueChange={(value) => handleTeamMemberChange(index, 'semester', value)}
+                          >
+                            <SelectTrigger className="bg-background border-input">
+                              <SelectValue placeholder="Select semester" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {semesterOptions.map((semester) => (
+                                <SelectItem key={`${index}-${semester}`} value={semester}>
+                                  Semester {semester}
+                                </SelectItem>
+                              ))}
                             </SelectContent>
                           </Select>
                         </div>
