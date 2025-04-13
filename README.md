@@ -4,7 +4,7 @@ A modern, responsive website for the RJU Hackfest 1.0 hackathon event. Built wit
 
 ![RJU Hackfest](https://via.placeholder.com/800x400?text=RJU+Hackfest+1.0)
 
-## 🌟 Features
+## 🌟 Features:
 
 - **Responsive Design**: Fully responsive layout that works on all devices
 - **Dark/Light Mode**: Theme switching with system preference detection
