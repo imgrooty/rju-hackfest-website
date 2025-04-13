@@ -55,7 +55,7 @@ export default function Chatbot() {
   }
 
   return (
-    <div className={`fixed bottom-4 right-4 ${isMinimized ? 'w-72' : 'w-80 sm:w-96'} bg-background border border-border rounded-lg shadow-xl transition-all duration-300`}>
+    <div className={`fixed bottom-4 right-4 ${isMinimized ? 'w-72' : 'w-60 sm:w-80'} bg-background border border-border rounded-lg shadow-xl transition-all duration-300`}>
       {/* Header */}
       <div className="p-3 bg-hackathon-primary/10 backdrop-blur-sm border-b border-border rounded-t-lg flex items-center justify-between">
         <div className="flex items-center space-x-2">
@@ -79,7 +79,7 @@ export default function Chatbot() {
       </div>
 
       {/* Messages */}
-      <div className={`${isMinimized ? 'h-72' : 'h-[400px] sm:h-[500px]'} overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-border scrollbar-track-background`}>
+      <div className={`${isMinimized ? 'h-36' : 'h-[50vh]'} overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-border scrollbar-track-background`}>
         {messages.length === 0 && (
           <div className="text-center text-muted-foreground text-sm py-8">
             👋 Hi! I'm your AI assistant. Ask me anything about RJU HACKFEST or general tech questions!
@@ -143,4 +143,4 @@ export default function Chatbot() {
       </form>
     </div>
   );
-} 
+}
