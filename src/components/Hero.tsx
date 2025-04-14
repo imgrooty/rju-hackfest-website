@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-8">
               <div className="flex flex-col items-center sm:items-start">
-                <span className="text-hackathon-primary text-3xl font-bold">20-28</span>
+                <span className="text-hackathon-primary text-3xl font-bold">28-32</span>
                 <span className="text-muted-foreground">Participants</span>
               </div>
               <div className="flex flex-col items-center sm:items-start">
