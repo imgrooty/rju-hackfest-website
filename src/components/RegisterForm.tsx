@@ -121,7 +121,7 @@ const RegisterForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnXeg6vqddeOTSKZR0wyHYMmhP9m9fyxmisg9nYEq8mFx9CS9-RnLePAkLhSyiKxMnzQ/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_58yiPG791LBVZQbMnwqM6A3Zl7pATEhb0dtk-3x_U-_uZO1FaHxkuTp1sd9MIxX98A/exec';
 
     try {
       const dataToSend = {
