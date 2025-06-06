@@ -1,126 +1,108 @@
-# RJU Hackfest 1.0 Website
 
-A modern, responsive website for the RJU Hackfest 1.0 hackathon event. Built with React, TypeScript, and Tailwind CSS.
+# 🎉 RJU HackFest Website
 
-![RJU Hackfest](https://via.placeholder.com/800x400?text=RJU+Hackfest+1.0)
+Welcome to the official website repository for **RJU HackFest** — a high-energy, innovation-packed hackathon event organized by Rajasthan University’s brightest minds! 🚀
 
-## 🌟 Features:-
+This site was built to manage **event details**, **participant registration**, and create a **buzz** around the hackathon. Whether you're an attendee, organizer, or curious developer, this repo is for you.
 
-- **Responsive Design**: Fully responsive layout that works on all devices
-- **Dark/Light Mode**: Theme switching with system preference detection
-- **Interactive UI**: Modern UI components with smooth animations
-- **Registration System**: Team and individual registration with Google Sheets integration
-- **3D Elements**: Three.js powered 3D scene for visual appeal
-- **Accessibility**: Built with accessibility in mind
+![HackFest Preview](https://rjuhackfest.vercel.app) <!-- Replace with actual image if available -->
 
-## 🚀 Getting Started
+---
 
-### Prerequisites
+## 🌐 Live Website
 
-- Node.js (v16 or higher)
-- npm 
+🔗 [Visit the HackFest Website](https://imgrooty.github.io/rju-hackfest-website/)  
+📅 Event Date: _[Insert date here if known]_  
+📍 Venue: _[Insert venue here]_
 
-### Installation
+---
 
-1. Clone the repository:
+## ⚙️ Tech Stack
+
+This website was created using the following technologies:
+
+- 🔵 **HTML5** – Semantic and structured layout
+- 🎨 **CSS3** – Custom styling with animations
+- 🧠 **JavaScript** – For interactivity and form validation
+- 📜 **Google Apps Script** – Handles form submissions and auto-reply emails
+- 📊 **Google Sheets** – Acts as a backend to store form responses
+
+---
+
+## ✨ Features
+
+- 🎯 Clean, modern, responsive design
+- 📝 Registration form connected to Google Sheets
+- 📩 Auto email confirmation using Google Apps Script
+- 🔐 Basic form validation
+- 📱 Mobile-friendly layout
+
+---
+
+## 🚀 How to Use / Run Locally
+
+1. **Clone the Repository**
+
    ```bash
-   git clone https://github.com/yourusername/rju-hackfest-website.git
+   git clone https://github.com/imgrooty/rju-hackfest-website.git
    cd rju-hackfest-website
-   ```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+2. Open index.html in your browser
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+You can also use a live server like VS Code’s “Live Server” extension for easier development.
 
-4. Open your browser and navigate to `http://localhost:5173`
 
-## 🛠️ Built With
 
-- [React](https://reactjs.org/) - UI library
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [Vite](https://vitejs.dev/) - Build tool and dev server
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [shadcn/ui](https://ui.shadcn.com/) - Re-usable components
-- [Three.js](https://threejs.org/) - 3D graphics library
-- [React Router](https://reactrouter.com/) - Routing
-- [React Query](https://tanstack.com/query/latest) - Data fetching
-- [GSAP](https://greensock.com/gsap/) - Animations
 
-## 🧩 Key Components
+---
 
-- **Hero**: Eye-catching introduction to the hackathon
-- **About**: Information about the event
-- **Schedule**: Timeline of hackathon events
-- **Prizes**: Available prizes and rewards
-- **Team**: Organizing team members
-- **RegisterForm**: Registration form with Google Sheets integration
-- **FAQ**: Frequently asked questions
-- **Footer**: Site footer with links and information
+🛠️ Customize for Your Event
 
-## 🎨 Customization
+Want to adapt this for your own hackathon or tech fest? Simply:
 
-### Theme Colors
+Update content in index.html
 
-The theme colors can be customized in `tailwind.config.ts`:
+Link your own Google Form and update the Apps Script accordingly
 
-```typescript
-colors: {
-  hackathon: {
-    primary: '#9b87f5',
-    secondary: '#7E69AB',
-    dark: '#1A1F2C',
-    light: '#D6BCFA',
-    soft: '#E5DEFF',
-  },
-  // ...
-}
-```
+Replace images and branding in the assets/ directory
 
-### Registration Form
 
-The registration form data is sent to a Google Sheet. To set up your own:
 
-1. Create a Google Sheet with appropriate columns
-2. Create a Google Apps Script to handle form submissions
-3. Deploy the script as a web app
-4. Update the `GOOGLE_SCRIPT_URL` in `RegisterForm.tsx`
+---
 
-## 📱 Responsive Design
+📂 Folder Structure
 
-The website is fully responsive with breakpoints for:
-- Mobile: < 640px
-- Tablet: 640px - 1024px
-- Desktop: > 1024px
+rju-hackfest-website/
+│
+├── index.html              # Main landing page
+├── style.css               # Stylesheet
+├── script.js               # Form and site logic
+├── /assets                 # Images, logos, icons
+└── README.md               # You’re reading it!
 
-## 🔧 Development
 
-### Available Scripts
+---
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+💌 Contact
 
-## 📄 License
+Have questions or want to collaborate?
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+👨‍💻 GitHub: @imgrooty
 
-## 👥 Contributors
+📧 Email: [Add your contact email here]
 
-- [Bikram Sharma](https://github.com/imgrooty)
 
-## 🙏 Acknowledgments
 
-- [shadcn/ui](https://ui.shadcn.com/) for the UI components
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Three.js](https://threejs.org/) for the 3D graphics library
+---
+
+⭐ Star the Repo
+
+If you found this helpful or inspiring, leave a ⭐ on the repo. It helps others discover the project!
+
+
+---
+
+📜 License
+
+This project is licensed under the MIT License. Feel free to fork and remix.
+
